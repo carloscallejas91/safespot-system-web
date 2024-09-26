@@ -1,0 +1,18 @@
+.customShapeDividerTop1 {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: 0;
+}
+
+.customShapeDividerTop1 svg {
+  position: relative;
+  display: block;
+  width: calc(120% + 1.3px);
+  height: 128px;
+  z-index: 0;
+}
