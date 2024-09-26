@@ -7,7 +7,7 @@ Este projeto é uma aplicação web desenvolvida com React.js e utiliza a biblio
 
 1. **Clone o repositório:**
 ```
-git clone <https://github.com/carloscallejas91/react-safespot.git>
+git clone <https://github.com/carloscallejas91/safespot-system-web.git>
 cd <react-safespot>
 ```
 
