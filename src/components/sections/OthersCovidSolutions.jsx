@@ -1,49 +1,38 @@
-import { SFSection, SFRow, SFCol } from "../../styles/content/style.jsx";
+import {
+  SFSection,
+  SFRow,
+  SFCol,
+  SFOverlay,
+} from "../../styles/content/style.jsx";
 import { SFBackgroundVideo } from "../../styles/video/style.jsx";
 import { Grid } from "antd";
-import colors from "../../constants/colors.jsx";
 import CardTemplate from "../widgets/CardTemplate.jsx";
 import imageMask from "../../assets/img-mask-identification.png";
 import imageTemperature from "../../assets/img-body-temperature.png";
 import videoBg from "../../assets/bg-video-tecnology.mp4";
+import staticBackground from "../../assets/bck-others.png";
 
 const OthersCovidSolutions = ({ id }) => {
   const { useBreakpoint } = Grid;
   const breakpoint = useBreakpoint();
 
   return (
-    <SFSection
-      id={id}
-      height={breakpoint.lg ? "70vh" : "auto"}
-      backgroundColor={colors.overlay}
-      breakpoint={breakpoint}
-      as="section"
-    >
-      <SFBackgroundVideo
-        src={videoBg}
-        position="absolute"
-        autoPlay
-        loop
-        muted
-      />
+    <SFSection id={id} backgroundImage={staticBackground} as="section">
+      <SFOverlay />
 
-      <SFRow
-        height="100%"
-        justify="center"
-        align="top"
-        margin={breakpoint.lg ? "-15% 0 15% 0" : "10% 0"}
-        gutter={[16, 16]}
-      >
-        <SFCol
-          height="auto"
-          alignContent="center"
-          breakpoint={breakpoint}
-          xs={20}
-          sm={20}
-          md={20}
-          lg={11}
-          xl={11}
-        >
+      {breakpoint.md && (
+        <SFBackgroundVideo
+          src={videoBg}
+          position="absolute"
+          autoPlay
+          loop
+          muted
+          controls={false}
+        />
+      )}
+
+      <SFRow justify="center" margin={"5% 0"} gutter={[16, 16]}>
+        <SFCol xs={20} sm={20} md={20} lg={11} xl={11}>
           <CardTemplate
             title={"Identificação de máscaras"}
             text={
@@ -58,16 +47,7 @@ const OthersCovidSolutions = ({ id }) => {
           />
         </SFCol>
 
-        <SFCol
-          height="auto"
-          alignContent="center"
-          breakpoint={breakpoint}
-          xs={20}
-          sm={20}
-          md={20}
-          lg={11}
-          xl={11}
-        >
+        <SFCol xs={20} sm={20} md={20} lg={11} xl={11}>
           <CardTemplate
             title={"Controle de temperatura corporal"}
             text={

@@ -1,4 +1,9 @@
-import { SFSection, SFRow, SFCol } from "../../styles/content/style.jsx";
+import {
+  SFSection,
+  SFRow,
+  SFCol,
+  SFOverlay,
+} from "../../styles/content/style.jsx";
 import {
   SFSecondaryTitle,
   SFParagraph,
@@ -8,30 +13,30 @@ import { Grid } from "antd";
 import colors from "../../constants/colors.jsx";
 import CustomTriangleDividerTop from "../widgets/CustomTriangleDividerTop.jsx";
 import videoBg from "../../assets/bg-video-smart-distancing.mp4";
+import staticBackground from "../../assets/bck-smart-distancing.png";
 
 const SmartDistancing = ({ id }) => {
   const { useBreakpoint } = Grid;
   const breakpoint = useBreakpoint();
 
   return (
-    <SFSection
-      id={id}
-      backgroundColor={colors.overlay}
-      breakpoint={breakpoint}
-      as="section"
-    >
-      {breakpoint.lg && <CustomTriangleDividerTop />}
+    <SFSection id={id} backgroundImage={staticBackground} as="section">
+      {breakpoint.xxl && <CustomTriangleDividerTop />}
 
-      <SFBackgroundVideo
-        src={videoBg}
-        position="absolute"
-        autoPlay
-        loop
-        muted
-      />
+      <SFOverlay />
+
+      {breakpoint.md && (
+        <SFBackgroundVideo
+          src={videoBg}
+          position="absolute"
+          autoPlay
+          loop
+          muted
+          controls={false}
+        />
+      )}
 
       <SFRow
-        height="100%"
         justify="center"
         margin={breakpoint.lg ? "0" : "10% 0"}
         gutter={[16, 16]}

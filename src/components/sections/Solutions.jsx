@@ -15,21 +15,13 @@ const Solutions = ({ id }) => {
   const breakpoint = useBreakpoint();
 
   return (
-    <SFSection
-      id={id}
-      breakpoint={breakpoint}
-      backgroundImage={backgroundImage}
-      as="section"
-    >
+    <SFSection id={id} backgroundImage={backgroundImage} as="section">
       <SFRow
-        height="auto"
         justify="center"
         margin={breakpoint.lg ? "0" : "15% 0"}
         gutter={[16, 16]}
       >
         <SFCol
-          height="auto"
-          breakpoint={breakpoint}
           xs={20}
           sm={20}
           md={20}
@@ -80,7 +72,7 @@ const Solutions = ({ id }) => {
         </SFCol>
       </SFRow>
 
-      {breakpoint.lg && <CustomTriangleDividerBottom />}
+      {breakpoint.xxl && <CustomTriangleDividerBottom />}
     </SFSection>
   );
 };

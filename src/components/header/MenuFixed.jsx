@@ -6,7 +6,6 @@ import logo from "../../assets/logotipo.png";
 import itemsMenu from "./itemsMenu.jsx";
 import colors from "../../constants/colors.jsx";
 import { scrollToSection } from "../../utils/ScrollToSection.jsx";
-import { scrollToSectionWithMargin } from "../../utils/ScrollToSectionWithMargin.jsx";
 
 const { Header } = Layout;
 
@@ -48,7 +47,7 @@ const MenuFixed = () => {
           <SFContent
             width="100%"
             padding="1% 8%"
-            flexDirection="row" 
+            flexDirection="row"
             justifyContent="space-between"
             alignItems="center"
             backgroundColor={colors.overlay}
@@ -124,11 +123,7 @@ const MenuFixed = () => {
                   const section =
                     selectedItem.link || selectedItem.label.toLowerCase();
 
-                  if (e.key === "6") {
-                    scrollToSectionWithMargin(section);
-                  } else {
-                    scrollToSection(section);
-                  }
+                  scrollToSection(section);
                 }
               }}
               mode="horizontal"

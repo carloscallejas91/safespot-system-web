@@ -15,28 +15,27 @@ const ArtificialIntelligenceHealthcare = ({ id }) => {
   const { useBreakpoint } = Grid;
   const breakpoint = useBreakpoint();
   return (
-    <SFSection
-      id={id}
-      breakpoint={breakpoint}
-      backgroundImage={backgroundImage}
-      as="section"
-    >
-      {breakpoint.lg && <CustomTriangleDividerTop />}
+    <SFSection id={id} backgroundImage={backgroundImage} as="section">
+      {breakpoint.xxl && <CustomTriangleDividerTop />}
+
       <SFRow
-        height="100%"
         backgroundColor={colors.overlay}
         justify="center"
-        padding={!breakpoint.xl && "5% 0 10% 0"}
+        padding={breakpoint.xl ? "0" : "5% 0 10% 0"}
         gutter={breakpoint.lg ? [16, 16] : [0, 16]}
+        style={{ flex: "1" }}
       >
         <SFCol
-          height="auto"
           xs={20}
           sm={20}
           md={20}
           lg={12}
           xl={12}
-          style={breakpoint.lg ? { paddingLeft: "0" } : { paddingTop: "5%" }}
+          style={
+            breakpoint.lg
+              ? { paddingLeft: "0", minHeight: "100vh" }
+              : { paddingTop: "5%" }
+          }
         >
           <img
             width="100%"
@@ -46,17 +45,8 @@ const ArtificialIntelligenceHealthcare = ({ id }) => {
             style={{ objectFit: "cover", zIndex: "-1" }}
           />
         </SFCol>
-        <SFCol
-          height="auto"
-          justify="center"
-          align="center"
-          alignContent="center"
-          xs={20}
-          sm={20}
-          md={20}
-          lg={12}
-          xl={12}
-        >
+
+        <SFCol alignContent="center" xs={20} sm={20} md={20} lg={12} xl={12}>
           <SFText textAlign="left" breakpoint={breakpoint}>
             Inteligência artificial na saúde
           </SFText>
@@ -78,7 +68,7 @@ const ArtificialIntelligenceHealthcare = ({ id }) => {
         </SFCol>
       </SFRow>
 
-      {breakpoint.lg && (
+      {breakpoint.xxl && (
         <CustomWavyDividerBottom primaryColor={colors.secondaryDivider} />
       )}
     </SFSection>

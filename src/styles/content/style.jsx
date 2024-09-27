@@ -1,6 +1,6 @@
 import styled from "styled-components";
+import colors from "../../constants/colors.jsx";
 import { Row, Col } from "antd";
-import { heightSection, heightColumn } from "../helpers/contentHelper.jsx";
 
 export const SFMainContent = styled.div`
   display: ${(props) => props.display || "flex"};
@@ -12,11 +12,11 @@ export const SFMainContent = styled.div`
   background-image: url(${(props) => props.backgroundImage || "none"});
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: -1;
 `;
 
 export const SFSection = styled(SFMainContent)`
-  height: ${(props) =>
-    props.height || heightSection(props.breakpoint) || "100vh"};
+  min-height: 100vh;
   padding: 0;
   margin: 0;
   position: relative;
@@ -35,16 +35,24 @@ export const SFContent = styled.div`
 
 export const SFRow = styled(Row)`
   width: ${(props) => props.width || "100%"};
-  height: ${(props) => props.height || "100%"};
   padding: ${(props) => props.padding || "1% 0"};
   margin: ${(props) => props.margin || "0"};
   background-color: ${(props) => props.backgroundColor || "transparent"};
+  align-content: ${(props) => props.alignContent || "center"};
 `;
 
 export const SFCol = styled(Col)`
-  width: ${(props) => props.width || "100%"};
-  height: ${(props) => props.height || heightColumn(props.breakpoint)};
   padding: ${(props) => props.padding || "0"};
   margin: ${(props) => props.margin || "0"};
   align-content: ${(props) => props.alignContent || "start"};
+`;
+
+export const SFOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: ${colors.overlay};
+  zindex: 0;
 `;

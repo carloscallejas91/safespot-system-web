@@ -6,4 +6,5 @@ export const SFBackgroundVideo = styled.video`
   object-fit: cover;
   position: ${(props) => props.position || "fixed"};
   z-index: ${(props) => props.zIndex || "-1"};
+  pointer-events: none;
 `;

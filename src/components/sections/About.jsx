@@ -20,19 +20,13 @@ const About = ({ id }) => {
   const linkedinLink = "https://www.linkedin.com/company/safespotsystem";
 
   return (
-    <SFSection
-      id={id}
-      breakpoint={breakpoint}
-      backgroundColor="black"
-      as="section"
-    >
+    <SFSection id={id} backgroundColor="black" as="section">
       <SFRow
-        height="auto"
         backgroundColor={colors.primary}
         justify="center"
         gutter={breakpoint.lg ? [16, 16] : [0, 16]}
       >
-        <SFCol height="auto" xs={20} sm={20} md={20} lg={5} xl={3}>
+        <SFCol xs={20} sm={20} md={20} lg={5} xl={3}>
           <Button
             shape="rounded"
             icon={<FacebookOutlined />}
@@ -66,12 +60,11 @@ const About = ({ id }) => {
         </SFCol>
       </SFRow>
 
-      <SFRow height="100%" justify="center" gutter={[16, 16]}>
+      <SFRow justify="center" gutter={[16, 16]} style={{ flex: 1 }}>
         <SFCol
           align="center"
           alignContent="center"
           margin={breakpoint.lg ? "0" : "5% 0"}
-          breakpoint={breakpoint}
           xs={20}
           sm={20}
           md={20}
@@ -80,11 +73,10 @@ const About = ({ id }) => {
         >
           <Image width={"80%"} src={image} preview={false} />
         </SFCol>
+
         <SFCol
           align="center"
-          alignContent="center"
           margin={breakpoint.lg ? "0" : "5% 0"}
-          breakpoint={breakpoint}
           xs={20}
           sm={20}
           md={20}
@@ -113,7 +105,7 @@ const About = ({ id }) => {
         </SFCol>
       </SFRow>
 
-      {breakpoint.lg && (
+      {breakpoint.xxl && (
         <CustomWavyDividerBottom primaryColor={colors.primaryDivider} />
       )}
     </SFSection>

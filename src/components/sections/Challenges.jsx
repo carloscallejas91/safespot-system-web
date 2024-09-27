@@ -15,28 +15,14 @@ const BusinessIntelligence = ({ id }) => {
   const breakpoint = useBreakpoint();
 
   return (
-    <SFSection
-      id={id}
-      breakpoint={breakpoint}
-      backgroundColor={colors.primary}
-      as="section"
-    >
-      {breakpoint.lg && <CustomTriangleDividerTop />}
+    <SFSection id={id} backgroundColor={colors.primary} as="section">
+      {breakpoint.xxl && <CustomTriangleDividerTop />}
       <SFRow
-        height="auto"
         justify="center"
         padding={!breakpoint.xl && "10% 0"}
         gutter={[16, 16]}
       >
-        <SFCol
-          height="auto"
-          alignContent="center"
-          xs={20}
-          sm={20}
-          md={20}
-          lg={10}
-          xl={10}
-        >
+        <SFCol alignContent="center" xs={20} sm={20} md={20} lg={10} xl={10}>
           <SFSecondaryTitle
             level={2}
             fontSize="3rem"
@@ -60,15 +46,7 @@ const BusinessIntelligence = ({ id }) => {
             </SFParagraph>
           </SFCard>
         </SFCol>
-        <SFCol
-          height="auto"
-          alignContent="center"
-          xs={20}
-          sm={20}
-          md={20}
-          lg={10}
-          xl={10}
-        >
+        <SFCol alignContent="center" xs={20} sm={20} md={20} lg={10} xl={10}>
           <SFCard height="auto" margin="5% 0">
             <SFSecondaryTitle
               level={2}
@@ -98,7 +76,7 @@ const BusinessIntelligence = ({ id }) => {
         </SFCol>
       </SFRow>
 
-      {breakpoint.lg && <CustomTriangleDividerBottom />}
+      {breakpoint.xxl && <CustomTriangleDividerBottom />}
     </SFSection>
   );
 };

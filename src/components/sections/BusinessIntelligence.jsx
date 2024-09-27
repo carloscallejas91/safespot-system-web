@@ -13,27 +13,13 @@ const BusinessIntelligence = ({ id }) => {
   const breakpoint = useBreakpoint();
 
   return (
-    <SFSection
-      id={id}
-      breakpoint={breakpoint}
-      backgroundColor={colors.overlay}
-      as="section"
-    >
+    <SFSection id={id} backgroundColor={colors.overlay} as="section">
       <SFRow
-        height="auto"
         justify="center"
         padding={!breakpoint.xl && "10% 0"}
         gutter={[16, 16]}
       >
-        <SFCol
-          height="auto"
-          alignContent="center"
-          xs={20}
-          sm={20}
-          md={20}
-          lg={10}
-          xl={10}
-        >
+        <SFCol xs={20} sm={20} md={20} lg={10} xl={10}>
           <SFSecondaryTitle
             level={3}
             color={colors.primary}
@@ -73,7 +59,7 @@ const BusinessIntelligence = ({ id }) => {
         </SFCol>
       </SFRow>
 
-      {breakpoint.lg && <CustomTriangleDividerBottom />}
+      {breakpoint.xxl && <CustomTriangleDividerBottom />}
     </SFSection>
   );
 };
